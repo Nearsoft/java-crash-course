@@ -1,5 +1,7 @@
 package com.nearsoft.domain;
 
+import com.nearsoft.exceptions.WorkshopGroupIsFullException;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -58,11 +60,11 @@ public class Workshop {
         return students.size() >= getMinGroupSize();
     }
 
-    public void enroll(Student student) throws Exception {
+    public void enroll(Student student)  {
         if (students.size() < getMaxGroupSize()){
             students.add(student);
         }else{
-            throw new Exception("WorkshopGroupIsFull");
+            throw new WorkshopGroupIsFullException();
         }
 
     }
