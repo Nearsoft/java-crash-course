@@ -5,6 +5,7 @@ Java course for normal people (javascript, python, ruby, php developers)
   1. basic programming knowlage
   2. java jdk
   3. postgresql 
+  4. intellij idea
 
 ## Sessions 
   1.  Hello Class My Name is
