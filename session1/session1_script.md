@@ -56,12 +56,12 @@
 
 7.[STUDENT] Create the package com.nearsoft.domain
 
-8.[STUDENT] Create the following classes under package domain
+8.[STUDENT] Create the domain classes
        
        Student (FirstName, LastName , email)
        Workshop (Title, ,group max/min size, StartDate )
      
-9.[INSTRUCTOR] explain constructors
+9.[INSTRUCTOR] explains constructors
 
 10.[STUDENT] create basic constructors 
        
@@ -76,7 +76,6 @@
 13.[INSTRUCTOR] explain
 
        - Collections API
-       - Interfaces , List
        - ArrayList
        - HashMap
 
@@ -107,43 +106,39 @@
         }
         
         
-        public void enroll(Student student) throws Exception {
+        public void enroll(Student student) {
               students.add(student);
         }
 
 
 
-18.[INSTRUCTOR ] explains throw and cath exceptions
+18.[INSTRUCTOR ] explains throw and catch exceptions
 
    
-19.[STUDENT] add the spect for 
+19.[STUDENT] add another spec/test 
 
         // Workshop Can Not Have More Than Max Students
   
-        @Test
-        public void workshopCanNotHaveMoreThanMaxStudents() {
-        
-            Workshop java = new Workshop("Java Super Advanced", 1, 1, new Date());
-            java.enroll(new Student("John", "Doe", "foo@doe.com"));
-            try {
-                java.enroll(new Student("Lisa", "Unlucky", "lisa@unlucky.com"));
-                fail();
-            }catch(Exception e){
-                assertTrue(e.getMessage().contains("WorkshopGroupIsFull"));
-            }
-        
-        
-        } 
+@Test
+public void workshopCanNotHaveMoreThanMaxStudents() {
+    Workshop java = new Workshop("Java Super Advanced", 1, 1, new Date());
+    java.enroll(new Student("John", "Doe", "foo@doe.com"));
+    try {
+        java.enroll(new Student("Lisa", "Unlucky", "lisa@unlucky.com"));
+        fail();
+    }catch(Exception e){
+        assertTrue(e.getMessage().contains("WorkshopGroupIsFull"));
+    }
+} 
         
         
-        public void enroll(Student student) throws Exception {
-            if (students.size() < getMaxGroupSize()){
-                students.add(student);
-            }else{
-                throw new Exception("WorkshopGroupIsFull");
-            }
-        
-        }
+public void enroll(Student student) throws Exception {
+    if (students.size() < getMaxGroupSize()){
+        students.add(student);
+    }else{
+        throw new Exception("WorkshopGroupIsFull");
+    }
+}
 
 
 20.[Student] creates the  WorkshopGroupIsFullException
