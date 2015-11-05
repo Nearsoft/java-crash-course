@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title></title>
+</head>
+<body>
+
+<h2>Workshops </h2>
+<ul th:each="workshop : ${workshops}">
+    <li>
+        <a th:href="@{'/workshop/' + ${workshop.title}}">
+          <span th:text="${workshop.title}">title here</span>
+        </a>
+    </li>
+</ul>
+RIIRIRIR
+</body>
+</html>
