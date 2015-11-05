@@ -14,10 +14,12 @@ Java course for normal people (javascript, python, ruby, php developers)
         - meet tools junit/maven
         - compile & run 
   2. Ponle Achiote, mijo!!
-        - jhipster
-        - generators
+        - sprint boot   
         - Workshop lists
         - Workshop detail (enrolled students)
+        - jhipster
+        - generators
+     
      
   3. Strings  
         - equals , == ?

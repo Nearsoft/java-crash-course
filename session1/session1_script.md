@@ -99,18 +99,13 @@
      - Workshop Group Can Be Opened If Enrolled Students Are More Than Min
 
         com.nearsoft.domain.WorkshopTest#workshopGroupCanBeOpenedIfEnrolledStudentsAreMoreThanMin
-        
-        
         public boolean canBeOpened() {
-          return students.size() >= getMinGroupSize();
+            return students.size() >= getMinGroupSize();
         }
-        
         
         public void enroll(Student student) {
-              students.add(student);
+            students.add(student);
         }
-
-
 
 18.[INSTRUCTOR ] explains throw and catch exceptions
 

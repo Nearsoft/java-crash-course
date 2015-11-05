@@ -62,8 +62,11 @@ public class Workshop {
     }
 
     public void enroll(Student student)  {
-
+        if (students.size() < getMaxGroupSize()){
             students.add(student);
+        }else{
+            throw new WorkshopGroupIsFullException();
+        }
 
     }
 }
