@@ -1,0 +1,62 @@
+
+<div>
+    <h2><span translate="academyApp.workshop.detail.title">Workshop</span> {{workshop.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="academyApp.workshop.title">Title</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{workshop.title}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="academyApp.workshop.min">Min</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{workshop.min}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="academyApp.workshop.max">Max</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{workshop.max}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="academyApp.workshop.startDate">StartDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{workshop.startDate | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="academyApp.workshop.student">student</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="student.detail({id:workshop.student.id})">{{workshop.student.id}}</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

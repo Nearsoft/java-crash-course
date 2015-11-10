@@ -1,0 +1,23 @@
+{
+    "academyApp": {
+        "workshop" : {
+            "home": {
+                "title": "Workshops",
+                "createLabel": "Créer un nouveau Workshop",
+                "createOrEditLabel": "Créer ou éditer un Workshop"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Workshop {{ id }} ?"
+            },
+            "detail": {
+                "title": "Workshop"
+            },
+            "title": "Title",
+            "min": "Min",
+            "max": "Max",
+            "startDate": "StartDate",
+            "student": "Student"
+        }
+    }
+}
+

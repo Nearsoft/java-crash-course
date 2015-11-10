@@ -1,0 +1,22 @@
+{
+    "academyApp": {
+        "student" : {
+            "home": {
+                "title": "Students",
+                "createLabel": "Créer un nouveau Student",
+                "createOrEditLabel": "Créer ou éditer un Student"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Student {{ id }} ?"
+            },
+            "detail": {
+                "title": "Student"
+            },
+            "firstName": "FirstName",
+            "lastName": "LastName",
+            "email": "Email",
+            "workshop": "Workshop"
+        }
+    }
+}
+
