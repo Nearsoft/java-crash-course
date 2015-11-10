@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.inject.Inject;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -105,5 +106,25 @@ public class WorkshopResource {
         log.debug("REST request to delete Workshop : {}", id);
         workshopRepository.delete(id);
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert("workshop", id.toString())).build();
+    }
+
+    /**
+     * SEARCH  /workshops/search/:query -> search for the workshop corresponding
+     * to the query.
+     */
+    @RequestMapping(value = "/workshops/search/{query}",
+            method = RequestMethod.GET,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public List<Workshop> searchWorkshops(@PathVariable String query) {
+        List<Workshop> workshops = workshopRepository.findAll();
+        List<Workshop> result = new ArrayList<>();
+
+        for (Workshop workshop : workshops){
+            if(workshop.getTitle().equals(query)){
+                result.add(workshop);
+            }
+        }
+        return result;
     }
 }
