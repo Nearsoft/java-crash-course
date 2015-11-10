@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('academyApp')
-    .controller('WorkshopController', function ($scope, Workshop) {
+    .controller('WorkshopController', function ($scope, Workshop, WorkshopSearch) {
         $scope.workshops = [];
         $scope.loadAll = function() {
             Workshop.query(function(result) {
@@ -26,6 +26,10 @@ angular.module('academyApp')
                 });
         };
 
+       $scope.search = function () {
+           $scope.workshops = WorkshopSearch.query({searchQuery: searchQuery});
+       };
+
         $scope.refresh = function () {
             $scope.loadAll();
             $scope.clear();
@@ -41,3 +45,9 @@ angular.module('academyApp')
             };
         };
     });
+    angular.module('academyApp')
+        .factory('WorkshopSearch', function ($resource) {
+            return $resource('api/workshops/search/:query', {}, {
+                'query': { method: 'GET', isArray: true}
+            });
+        });
