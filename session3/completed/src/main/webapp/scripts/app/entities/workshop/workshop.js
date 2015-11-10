@@ -98,5 +98,5 @@ angular.module('academyApp')
                         $state.go('^');
                     })
                 }]
-            })
+            });
     });

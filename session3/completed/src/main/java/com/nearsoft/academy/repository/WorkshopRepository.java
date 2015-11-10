@@ -10,5 +10,5 @@ import java.util.List;
  * Spring Data JPA repository for the Workshop entity.
  */
 public interface WorkshopRepository extends JpaRepository<Workshop,Long> {
-    List<Workshop> findByTitle(String title);
+
 }

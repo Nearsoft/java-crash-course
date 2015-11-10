@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('academyApp')
-    .controller('WorkshopController', function ($scope, Workshop, $resource) {
+    .controller('WorkshopController', function ($scope, Workshop) {
         $scope.workshops = [];
         $scope.loadAll = function() {
             Workshop.query(function(result) {
@@ -34,10 +34,10 @@ angular.module('academyApp')
         $scope.clear = function () {
             $scope.workshop = {
                 title: null,
-                groupMin: null,
-                groupMax: null,
+                min: null,
+                max: null,
                 startDate: null,
                 id: null
-            }
+            };
         };
     });
