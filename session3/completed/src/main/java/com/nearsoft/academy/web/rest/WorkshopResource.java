@@ -127,4 +127,5 @@ public class WorkshopResource {
         }
         return result;
     }
+    //TODO: add export to CSV as a sample of string concatenation
 }

@@ -27,7 +27,11 @@ angular.module('academyApp')
         };
 
        $scope.search = function () {
-           $scope.workshops = WorkshopSearch.query({searchQuery: searchQuery});
+           WorkshopSearch.query({query: $scope.searchQuery},
+                function(result){
+                    $scope.workshops = result;
+                }
+           );
        };
 
         $scope.refresh = function () {
@@ -45,9 +49,3 @@ angular.module('academyApp')
             };
         };
     });
-    angular.module('academyApp')
-        .factory('WorkshopSearch', function ($resource) {
-            return $resource('api/workshops/search/:query', {}, {
-                'query': { method: 'GET', isArray: true}
-            });
-        });
