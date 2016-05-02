@@ -65,8 +65,8 @@
 
 10.[STUDENT] create basic constructors 
        
-       Student (FirstName, LastName , email)
-       Workshop (Title,  group max/min size, StartDate )
+       Student (firstName, lastName , email)
+       Workshop (title, groupMaxSize, groupMinSize, startDate)
 
 
 11.[INSTRUCTOR] explain getters and setters
