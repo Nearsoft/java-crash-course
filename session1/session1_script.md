@@ -127,11 +127,11 @@ public void workshopCanNotHaveMoreThanMaxStudents() {
 } 
         
         
-public void enroll(Student student) throws Exception {
+public void enroll(Student student) throws WorkshopGroupIsFullException {
     if (students.size() < getMaxGroupSize()){
         students.add(student);
     }else{
-        throw new Exception("WorkshopGroupIsFull");
+        throw new WorkshopGroupIsFullException("WorkshopGroupIsFull");
     }
 }
 
